@@ -1,0 +1,3 @@
+Open_Close_de_b_w	Open_Close_us_b_w	Open_Close_jp_b_w	Open_Close_ca_b_w	Open_Close_uk_b_w	Open_Close_au_b_w	Open_Close_cn_b_w
+0.021	-0.0308 -0.005	-0.026	0.058	-0.016	0.032
+

@@ -11,7 +11,7 @@ import pandas as pd
 import datetime
 
 audusd_d = pd.read_csv('audusd_d.csv')
-au_b = pd.read_csv('10aty_b_d.csv') 
+au_b = pd.read_csv('10auy_b_d.csv') 
 us_b = pd.read_csv('10usy_b_d.csv')
 
 audusd_d['Date'] = pd.to_datetime(audusd_d['Date'])
@@ -78,7 +78,7 @@ bst = xgb.train(xgb_params, dtrain, num_round)
 
 #make xgb matrix for prediction
 audusd_pred = pd.read_csv('audusd_d_pred_0.1.csv')
-au_b_pred = pd.read_csv('10aty_b_d_pred_0.1.csv') 
+au_b_pred = pd.read_csv('10auy_b_d_pred_0.1.csv') 
 us_b_pred = pd.read_csv('10usy_b_d_pred_0.1.csv')
 audusd_pred['Date'] = pd.to_datetime(audusd_pred['Date'])
 au_b_pred['Date'] = pd.to_datetime(au_b_pred['Date'])

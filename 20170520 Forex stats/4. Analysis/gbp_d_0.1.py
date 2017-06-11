@@ -30,7 +30,7 @@ del uk_b['Date']
 us_b.index = us_b['Date']
 del us_b['Date']
    
-gbpusd_d['Open_Close_eurusd'] = (gbpusd_d['Open'] - gbpusd_d['Close']).astype(float)
+gbpusd_d['Open_Close_gbpusd'] = (gbpusd_d['Open'] - gbpusd_d['Close']).astype(float)
 uk_b['Open_Close_uk_b'] = (uk_b['Open'] - uk_b['Close']).astype(float)
 us_b['Open_Close_us_b'] = (us_b['Open'] - us_b['Close']).astype(float)
 
