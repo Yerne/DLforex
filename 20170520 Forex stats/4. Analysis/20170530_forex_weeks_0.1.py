@@ -176,23 +176,27 @@ bst_aud = xgb.train(xgb_params, dtrain_aud, num_round)
 X2 = dset.iloc[-1:, 7:14]
 y_pred = xgb.DMatrix(X2.values)
 #feed model with test matrix to make prediction
-pred_eur = bst_eur.predict(y_pred)
-pred_gbp = bst_gbp.predict(y_pred)
-pred_jpy = bst_jpy.predict(y_pred)
-pred_cad = bst_cad.predict(y_pred)
-pred_gbpjpy = bst_gbpjpy.predict(y_pred)
-pred_audnzd = bst_audnzd.predict(y_pred)
-pred_aud = bst_aud.predict(y_pred)
+pred_eur = bst_eur.predict(y_pred).astype(float)
+pred_gbp = bst_gbp.predict(y_pred).astype(float)
+pred_jpy = bst_jpy.predict(y_pred).astype(float)
+pred_cad = bst_cad.predict(y_pred).astype(float)
+pred_gbpjpy = bst_gbpjpy.predict(y_pred).astype(float)
+pred_audnzd = bst_audnzd.predict(y_pred).astype(float)
+pred_aud = bst_aud.predict(y_pred).astype(float)
 #save data to csv for knime
-#X2.to_csv('eur_y_train_0.1.csv') 
- 
- 
-X1.to_csv('X1.csv') 
-y1.to_csv('y1.csv') 
+#X2.to_csv('eur_y_train_0.1.csv')
+df=pd.DataFrame() 
+df['eur'] = pd.DataFrame(pred_eur)
+df['gbp'] = pd.DataFrame(pred_gbp)
+df['aud'] = pd.DataFrame(pred_aud)
+df['cad'] = pd.DataFrame(pred_cad)
+df['jpy'] = pd.DataFrame(pred_jpy)
+df['gbpjpy'] = pd.DataFrame(pred_gbpjpy)
+df['audnzd'] = pd.DataFrame(pred_audnzd)
 
 
 
-
+df.to_csv('pred_fx.csv')
 
 
 
