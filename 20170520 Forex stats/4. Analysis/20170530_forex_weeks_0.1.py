@@ -196,10 +196,10 @@ df['audnzd'] = pd.DataFrame(pred_audnzd)
 
 
 
-df.to_csv('pred_fx.csv')
+df.to_csv('pred_fx_1.csv')
 
-
-
+X1.to_csv('X1.csv')
+y1.to_csv('y1.csv')
 
 --------------------------------------
 def xgbt(yz):
