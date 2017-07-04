@@ -99,5 +99,10 @@ df_inv['eurjpy'] = pd.DataFrame(pred_eurjpy)
 
 df_inv.to_csv('pred_fx_inv.csv')
 
+# feature importance 
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots(1, 1, figsize=(8, 16))
+xgb.plot_importance(bst_jpy, max_num_features=50, height=0.5, ax=ax)
 
+import gplearn 
 
